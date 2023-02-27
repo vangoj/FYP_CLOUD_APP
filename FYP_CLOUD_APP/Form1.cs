@@ -92,16 +92,6 @@ namespace FYP_CLOUD_APP
             process.BeginOutputReadLine();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e) //Azure deploy btn
         {
             textBox1.AppendText("Please wait...\r\n");
@@ -168,5 +158,72 @@ namespace FYP_CLOUD_APP
             process.BeginOutputReadLine();
         
     }
+
+        private void button5_Click(object sender, EventArgs e) //AWS bucket deploy
+        {
+            var userBucketName = textBox2.Text; // taking user input
+            textBox1.AppendText("Please wait...\r\n");
+            var ps1Destroy = @"C:\\FYP_CLOUD_APP\\powershell\\TF_AWS_Bucket_Apply.ps1";
+            var startInfo = new ProcessStartInfo()
+            {
+                FileName = "powershell.exe",
+                Arguments = $"-NoProfile -ExecutionPolicy unrestricted \"{ps1Destroy}\" \"{userBucketName}\"",
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                CreateNoWindow = true
+            };
+
+            var process = new Process()
+            {
+                StartInfo = startInfo,
+                EnableRaisingEvents = true
+            };
+            process.OutputDataReceived += (s, args) =>
+            {
+                if (!string.IsNullOrEmpty(args.Data))
+                {
+                    // Append the output to textBox1
+                    textBox1.Invoke((MethodInvoker)delegate
+                    {
+                        textBox1.AppendText(args.Data + Environment.NewLine);
+                    });
+                }
+            };
+            process.Start();
+            process.BeginOutputReadLine();
+        }
+
+        private void button6_Click(object sender, EventArgs e) //AWS bucket destroy
+        {
+            textBox1.AppendText("Please wait...\r\n");
+            var ps1Destroy = @"C:\\FYP_CLOUD_APP\\powershell\\TF_AWS_Bucket_Destroy.ps1";
+            var startInfo = new ProcessStartInfo()
+            {
+                FileName = "powershell.exe",
+                Arguments = $"-NoProfile -ExecutionPolicy unrestricted \"{ps1Destroy}\"",
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                CreateNoWindow = true
+            };
+
+            var process = new Process()
+            {
+                StartInfo = startInfo,
+                EnableRaisingEvents = true
+            };
+            process.OutputDataReceived += (s, args) =>
+            {
+                if (!string.IsNullOrEmpty(args.Data))
+                {
+                    // Append the output to textBox1
+                    textBox1.Invoke((MethodInvoker)delegate
+                    {
+                        textBox1.AppendText(args.Data + Environment.NewLine);
+                    });
+                }
+            };
+            process.Start();
+            process.BeginOutputReadLine();
+        }
     }
 }
