@@ -9,3 +9,14 @@ C:\FYP_APP\FYP_CLOUD_APP\FYP_CLOUD_APP\obj\Debug\FYP_CLOUD_APP.csproj.AssemblyRe
 C:\FYP_APP\FYP_CLOUD_APP\FYP_CLOUD_APP\obj\Debug\FYP_CLOUD_APP.csproj.SuggestedBindingRedirects.cache
 C:\FYP_APP\FYP_CLOUD_APP\FYP_CLOUD_APP\obj\Debug\FYP_CLOUD_APP.csproj.CoreCompileInputs.cache
 C:\FYP_APP\FYP_CLOUD_APP\FYP_CLOUD_APP\obj\Debug\FYP_CLOUD_APP.Form1.resources
+C:\FYP_CLOUD_APP\FYP_CLOUD_APP\bin\Debug\FYP_CLOUD_APP.exe.config
+C:\FYP_CLOUD_APP\FYP_CLOUD_APP\bin\Debug\FYP_CLOUD_APP.exe
+C:\FYP_CLOUD_APP\FYP_CLOUD_APP\bin\Debug\FYP_CLOUD_APP.pdb
+C:\FYP_CLOUD_APP\FYP_CLOUD_APP\obj\Debug\FYP_CLOUD_APP.csproj.AssemblyReference.cache
+C:\FYP_CLOUD_APP\FYP_CLOUD_APP\obj\Debug\FYP_CLOUD_APP.csproj.SuggestedBindingRedirects.cache
+C:\FYP_CLOUD_APP\FYP_CLOUD_APP\obj\Debug\FYP_CLOUD_APP.Form1.resources
+C:\FYP_CLOUD_APP\FYP_CLOUD_APP\obj\Debug\FYP_CLOUD_APP.Properties.Resources.resources
+C:\FYP_CLOUD_APP\FYP_CLOUD_APP\obj\Debug\FYP_CLOUD_APP.csproj.GenerateResource.cache
+C:\FYP_CLOUD_APP\FYP_CLOUD_APP\obj\Debug\FYP_CLOUD_APP.csproj.CoreCompileInputs.cache
+C:\FYP_CLOUD_APP\FYP_CLOUD_APP\obj\Debug\FYP_CLOUD_APP.exe
+C:\FYP_CLOUD_APP\FYP_CLOUD_APP\obj\Debug\FYP_CLOUD_APP.pdb
