@@ -28,7 +28,7 @@ namespace FYP_CLOUD_APP
         private void button1_Click(object sender, EventArgs e) //AWS deploy btn
         {
             textBox1.AppendText("Please wait...\r\n");
-            var ps1Apply = @"C:\\FYP_APP\\powershell\\TF_AWS_Apply.ps1";
+            var ps1Apply = @"C:\\FYP_CLOUD_APP\\powershell\\TF_AWS_Apply.ps1";
             var startInfo = new ProcessStartInfo()
             {
                 FileName = "powershell.exe",
@@ -62,7 +62,7 @@ namespace FYP_CLOUD_APP
         private void button2_Click(object sender, EventArgs e) //AWS Destroy btn
         {
             textBox1.AppendText("Please wait...\r\n");
-            var ps1Destroy = @"C:\\FYP_APP\\powershell\\TF_AWS_Destroy.ps1";
+            var ps1Destroy = @"C:\\FYP_CLOUD_APP\\powershell\\TF_AWS_Destroy.ps1";
             var startInfo = new ProcessStartInfo()
             {
                 FileName = "powershell.exe",
@@ -105,7 +105,7 @@ namespace FYP_CLOUD_APP
         private void button3_Click(object sender, EventArgs e) //Azure deploy btn
         {
             textBox1.AppendText("Please wait...\r\n");
-            var ps1Apply = @"C:\\FYP_APP\\powershell\\TF_Azure_Apply.ps1";
+            var ps1Apply = @"C:\\FYP_CLOUD_APP\\powershell\\TF_Azure_Apply.ps1";
             var startInfo = new ProcessStartInfo()
             {
                 FileName = "powershell.exe",
@@ -138,7 +138,7 @@ namespace FYP_CLOUD_APP
         private void button4_Click(object sender, EventArgs e) //Azure Destroy btn
         {
             textBox1.AppendText("Please wait...\r\n");
-            var ps1Destroy = @"C:\\FYP_APP\\powershell\\TF_Azure_Destroy.ps1";
+            var ps1Destroy = @"C:\\FYP_CLOUD_APP\\powershell\\TF_Azure_Destroy.ps1";
             var startInfo = new ProcessStartInfo()
             {
                 FileName = "powershell.exe",
