@@ -1,7 +1,8 @@
 # Configure the AWS Provider
-provider "aws" {
-    region = "eu-west-2"
-    access_key = var.AccessKey
+#AK & SK are stored as a variables for security
+provider "aws" { # Declaring the cloud privder
+    region = "eu-west-2" # Declaring the region
+    access_key = var.AccessKey 
     secret_key = var.SecretKey
 }
 
@@ -128,10 +129,10 @@ output "server_public_ip" {
 # 9. create Ubuntu server and install/enable apache2
 
 resource "aws_instance" "web-server-instance"{
-    ami               = "ami-0f540e9f488cfa27d"
-    instance_type     = "t2.micro"
+    ami               = "ami-0f540e9f488cfa27d" # OS image ID
+    instance_type     = "t2.micro" # CPU
     availability_zone = "eu-west-2a"
-    key_name          = "main-key"
+    key_name          = "main-key" # Security key
     
     network_interface {
         device_index = 0

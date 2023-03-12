@@ -67,12 +67,13 @@ resource "azurerm_virtual_machine" "example" {
   name                = "example-vm"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
-  vm_size             = "Standard_B1s"
+  vm_size             = var.cpuVar
 
+# values come from powershell 
   storage_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "18.04-LTS"
+    publisher = var.publisher
+    offer     = var.offer
+    sku       = var.sku
     version   = "latest"
   }
 
@@ -106,16 +107,11 @@ resource "azurerm_virtual_machine" "example" {
         host      = "${azurerm_public_ip.example.ip_address}"
       }
 
+    #Will check which OS was selected so it can run correct code       
     provisioner "remote-exec" {
-      inline = [
-        "sudo apt-get update",
-        "sudo apt-get install -y apache2",
-        "sudo systemctl start apache2",
-        "sudo systemctl enable apache2",
-        "sudo bash -c 'echo Azure Test Web App!> /var/www/html/index.html'"
-      ]   
+      inline = var.offer == "UbuntuServer" ? var.ubuntu_commands : var.debian_commands //if var.offer == ubuntu server it will run value one which is true if not true value 2 is used
     }
-}
+  }
 
 # Prints the public IP addres to the console
 output "server_public_ip" {
